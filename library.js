@@ -33,6 +33,23 @@ plugin.createAnonPost = function(params, callback) {
 	console.log("called createAnonPost");
 	console.log(params);
 	console.log(callback);
+
+	console.log("trying to read post");
+	console.log(params.post);
+	console.log(params.data);
+	console.log("finished");
+
+	let cid = undefined;
+	
+	if(params.post.hasOwnProperty("cid"))
+		cid = params.post.cid;
+	else {
+		let topicID = "topic:"+params.post.tid;
+		cid = db.objects.find({_key:topicID}).cid;
+	}
+
+	console.log("post belongs to category ");
+	console.log(cid);
 	
 	
 	//callback();
