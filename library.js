@@ -36,7 +36,7 @@ plugin.createAnonPost = function(params, callback) {
 	
 	
 	//callback();
-	callback(params);
+	callback(null, params);
 	console.log("finished");
 	console.log("-------------------");
 };
