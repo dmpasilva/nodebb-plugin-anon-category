@@ -3,9 +3,7 @@
 var path = require('path');
 var nconf = require('nconf');
 
-var db = require(path.join(nconf.get('base_dir'), 'src/database'));
-console.log(db);
-
+var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
 var controllers = require('./lib/controllers'),
 
 plugin = {};
@@ -54,8 +52,15 @@ plugin.createAnonPost = function(params, callback) {
 		cid = params.post.cid;
 	else {
 		let topicID = "topic:"+params.post.tid;
-		db.getObject(topicID, function(err, topic) {
-			cid = topic;
+		console.log("Searching for... "+topicID);
+		
+		cid = topics.getTopicField(topicID, 'cid', function(err, category) {
+			if (err) {
+				console.log("There was an error in anonymizer");
+				return -1;
+			}
+	
+			return category;
 		});
 		
 	}
