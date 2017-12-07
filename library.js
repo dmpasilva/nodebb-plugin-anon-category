@@ -1,7 +1,7 @@
 "use strict";
 
 var path = require('path');
-var nconf = require.main.require('nconf');
+var nconf = require('nconf');
 
 var db = require(path.join(nconf.get('base_dir'), 'src/database'));
 console.log(db);
@@ -39,6 +39,9 @@ plugin.createAnonPost = function(params, callback) {
 	console.log("called createAnonPost");
 	console.log(params);
 	console.log(callback);
+	console.log(db);
+
+
 
 	console.log("trying to read post");
 	console.log(params.post);
