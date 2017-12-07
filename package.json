@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-anon-category",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A plugin that anonymizes poster author in a specific category",
   "main": "library.js",
   "repository": {

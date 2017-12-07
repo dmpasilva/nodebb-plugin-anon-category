@@ -46,17 +46,14 @@ plugin.createAnonPost = function(params, callback) {
 		//console.log("post belongs to category ");
 		//console.log(cid);
 		if(cid == 36) {
-			console.log("o autor é");
-			params.post.uid = 1;
-			params.data.uid = 1;
-			//params.data.req.uid = 1;
+			params.post.uid = 0;
+			params.data.uid = 0;
+			//params.data.req.uid = 0;
 		}
 
 		console.log(params);
 
 		callback(null, params);
-		console.log("finished");
-		console.log("-------------------");
 	}
 	else {
 		
@@ -70,18 +67,15 @@ plugin.createAnonPost = function(params, callback) {
 			console.log(category);
 
 			if(category == 36) {
-				console.log("o autor é");
-				params.post.uid = 1;
-				params.data.uid = 1;
-				//params.data.req.uid = 1;
+				params.post.uid = 0;
+				params.data.uid = 0;
+				//params.data.req.uid = 0;
 				
 			}
 			
 			console.log(params);
 
 			callback(null, params);
-			console.log("finished");
-			console.log("-------------------");
 		});
 		
 	}
