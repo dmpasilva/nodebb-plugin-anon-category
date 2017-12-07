@@ -4,9 +4,11 @@ var path = require('path');
 var nconf = require.main.require('nconf');
 
 var db = require(path.join(nconf.get('base_dir'), 'src/database'));
+console.log(db);
+
 var controllers = require('./lib/controllers'),
 
-	plugin = {};
+plugin = {};
 
 plugin.init = function(params, callback) {
 	var router = params.router,
