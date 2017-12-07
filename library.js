@@ -32,6 +32,13 @@ plugin.addAdminNavigation = function(header, callback) {
 	callback(null, header);
 };
 
+plugin.anonTopic = function(params, callback) {
+	console.log("Called anonTopic");
+	console.log(params);
+	console.log(params.topicData);
+	console.log(params.data);
+}
+
 plugin.createAnonPost = function(params, callback) {
 	console.log("-------------------");
 	console.log("called createAnonPost");

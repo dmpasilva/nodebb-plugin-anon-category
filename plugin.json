@@ -11,6 +11,9 @@
 		},
 		{
 			"hook": "filter:post.create", "method": "createAnonPost"
+		},
+		{
+			"hook": "filter:topic.create", "method": "anonTopic"
 		}
 	],
 	"staticDirs": {
