@@ -54,7 +54,8 @@ plugin.createAnonPost = function(params, callback) {
 		//console.log(cid);
 		if(cid == 36) {
 			console.log("o autor é");
-			params.uid = 1;
+			params.post.uid = 1;
+			params.data.uid = 1;
 
 		}
 
@@ -77,7 +78,8 @@ plugin.createAnonPost = function(params, callback) {
 
 			if(cid == 36) {
 				console.log("o autor é");
-				params.uid = 1;
+				params.post.uid = 1;
+				params.data.uid = 1;
 				
 			}
 			
