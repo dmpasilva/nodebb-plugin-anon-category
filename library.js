@@ -55,7 +55,7 @@ plugin.createAnonPost = function(params, callback) {
 	else {
 		let topicID = "topic:"+params.post.tid;
 		db.getObject(topicID, function(err, topic) {
-			cid = topic.cid;
+			cid = topic;
 		});
 		
 	}
