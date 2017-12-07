@@ -33,7 +33,8 @@ plugin.createAnonPost = function(params, callback) {
 	console.log("called createAnonPost");
 	console.log(params.topicData);
 	console.log("-------------------");
+	
 	callback();
-}
+};
 
 module.exports = plugin;
