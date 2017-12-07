@@ -53,12 +53,14 @@ plugin.createAnonPost = function(params, callback) {
 		let topicID = "topic:"+params.post.tid;
 		console.log("Searching for... "+topicID);
 		
-		cid = topics.getTopicField(topicID, 'cid', function(err, category) {
+		cid = topics.getTopicField(params.post.tid, 'cid', function(err, category) {
 			if (err) {
 				console.log("There was an error in anonymizer");
 				return -1;
 			}
 	
+			console.log("I'm here");
+			console.log(category);
 			return category;
 		});
 		
