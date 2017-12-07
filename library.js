@@ -39,6 +39,9 @@ plugin.anonTopic = function(params, callback) {
 	if(params.topic.cid == 36) {
 		params.topic.uid = 0;
 		params.data.uid = 0;
+		
+		// we need this to stay as is due to forum modaration concerns
+		//params.data.req.uid = 0;
 
 		console.log(params);
 	}
@@ -57,12 +60,12 @@ plugin.createAnonPost = function(params, callback) {
 	if(params.post.hasOwnProperty("cid")) {
 		let cid = params.post.cid;
 		
-		//console.log("post belongs to category ");
-		//console.log(cid);
 		if(cid == 36) {
 			params.post.uid = 0;
 			params.data.uid = 0;
-			params.data.req.uid = 0;
+			
+			// we need this to stay as is due to forum modaration concerns
+			//params.data.req.uid = 0;
 		}
 
 		console.log(params);
@@ -84,8 +87,9 @@ plugin.createAnonPost = function(params, callback) {
 			if(category == 36) {
 				params.post.uid = 0;
 				params.data.uid = 0;
-				params.data.req.uid = 0;
 				
+				// we need this to stay as is due to forum modaration concerns
+				//params.data.req.uid = 0;
 			}
 			
 			console.log(params);
