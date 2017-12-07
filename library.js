@@ -50,8 +50,14 @@ plugin.createAnonPost = function(params, callback) {
 	if(params.post.hasOwnProperty("cid")) {
 		cid = params.post.cid;
 		
-		console.log("post belongs to category ");
-		console.log(cid);
+		//console.log("post belongs to category ");
+		//console.log(cid);
+		if(cid == 36) {
+			console.log("o autor é");
+			params.uid = 1;
+
+		}
+
 
 		//callback();
 		callback(null, params);
@@ -63,11 +69,17 @@ plugin.createAnonPost = function(params, callback) {
 		topics.getTopicField(params.post.tid, 'cid', function(err, category) {
 			if (err) {
 				console.log("There was an error in anonymizer");
-				return -1;
+				callback(null, params);
 			}
 	
 			console.log("post belongs to category ");
 			console.log(category);
+
+			if(cid == 36) {
+				console.log("o autor é");
+				params.uid = 1;
+				
+			}
 			
 			callback(null, params);
 			console.log("finished");
