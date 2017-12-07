@@ -1,20 +1,21 @@
-# Quickstart Plugin for NodeBB
+# Anon Category for NodeBB (under development)
 
-A starter kit for quickly creating NodeBB plugins. Comes with a pre-setup LESS file, server side JS script with an `action:app.load` hook, and a client-side script. Most plugins need at least one of the above, so this ought to save you some time. For a full list of hooks have a look at our [wiki page](https://github.com/NodeBB/NodeBB/wiki/Hooks), and for more information about creating plugins please visit our [documentation portal](https://docs.nodebb.org/).
+This NodeBB plugin allows you to have an anonymous category, i.e., a category where all post authors are anonymous no matter their login status or role.
 
-Fork this or copy it, and using your favourite text editor find and replace all instances of `nodebb-plugin-quickstart` with `nodebb-plugin-your-plugins-name`. Change the author's name in the LICENSE and package.json files.
-
-Once you're done don't forget to publish it on NPM, and make a thread about it [here](https://docs.nodebb.org/en/latest/plugins/hooks.html).
-
-
-## Hello World
-
-Really simple, just edit `static/lib/main.js` and paste in `console.log('hello world');`, and that's it!
+This plugin is still under development.
 
 ## Installation
 
-    npm install nodebb-plugin-quickstart
+**Installation is not recommended. Please be extremely careful and read every step carefuly.**
+
+Anotate the ID of the category you want to be the anon category.  
+
+Head to your nodeBB root directory (eg.: /usr/src/app) and install the plugin using:
+
+    npm install https://github.com/dmpasilva/nodebb-plugin-anon-category.git
+    
+Edit `library.js` and replace `36` with the ID you anotated previously.
 
 ## Screenshots
 
-Don't forget to add screenshots!
+Comming soon
