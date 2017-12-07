@@ -1,7 +1,7 @@
 {
 	"id": "nodebb-plugin-anon-category",
 	"url": "https://github.com/dmpasilva/nodebb-plugin-anon-category",
-	"library": "library.js",
+	"library": "./library.js",
 	"hooks": [
 		{
 			"hook": "static:app.load", "method": "init"
@@ -11,10 +11,7 @@
 		},
 		{
 			"hook": "filter:post.create", "method": "createAnonPost"
-		}/*,
-		{
-			"hook": ""
-		}*/
+		}
 	],
 	"staticDirs": {
 		"static": "./static"
