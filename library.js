@@ -1,6 +1,9 @@
 "use strict";
 
-var db = require('../../src/database');
+var path = require('path');
+var nconf = require.main.require('nconf');
+
+var db = require(path.join(nconf.get('base_dir'), 'src/database'));
 var controllers = require('./lib/controllers'),
 
 	plugin = {};
