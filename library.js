@@ -38,17 +38,10 @@ plugin.createAnonPost = function(params, callback) {
 	console.log(params);
 	console.log(callback);
 
-
-
-	console.log("trying to read post");
-	console.log(params.post);
-	console.log(params.data);
-	console.log("finished");
-
-	let cid = undefined;
+	console.log("trying to change author");
 	
 	if(params.post.hasOwnProperty("cid")) {
-		cid = params.post.cid;
+		let cid = params.post.cid;
 		
 		//console.log("post belongs to category ");
 		//console.log(cid);
@@ -56,11 +49,11 @@ plugin.createAnonPost = function(params, callback) {
 			console.log("o autor é");
 			params.post.uid = 1;
 			params.data.uid = 1;
-
+			//params.data.req.uid = 1;
 		}
 
+		console.log(params);
 
-		//callback();
 		callback(null, params);
 		console.log("finished");
 		console.log("-------------------");
@@ -76,13 +69,16 @@ plugin.createAnonPost = function(params, callback) {
 			console.log("post belongs to category ");
 			console.log(category);
 
-			if(cid == 36) {
+			if(category == 36) {
 				console.log("o autor é");
 				params.post.uid = 1;
 				params.data.uid = 1;
+				//params.data.req.uid = 1;
 				
 			}
 			
+			console.log(params);
+
 			callback(null, params);
 			console.log("finished");
 			console.log("-------------------");
