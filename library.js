@@ -35,8 +35,15 @@ plugin.addAdminNavigation = function(header, callback) {
 plugin.anonTopic = function(params, callback) {
 	console.log("Called anonTopic");
 	console.log(params);
-	console.log(params.topicData);
-	console.log(params.data);
+
+	if(params.topic.cid == 36) {
+		params.topic.uid = 0;
+		params.data.uid = 0;
+
+		console.log(params);
+	}
+
+	callback(null, params);
 }
 
 plugin.createAnonPost = function(params, callback) {
@@ -62,6 +69,7 @@ plugin.createAnonPost = function(params, callback) {
 
 		callback(null, params);
 	}
+
 	else {
 		
 		topics.getTopicField(params.post.tid, 'cid', function(err, category) {
@@ -86,7 +94,6 @@ plugin.createAnonPost = function(params, callback) {
 		});
 		
 	}
-
 	
 };
 
