@@ -1,5 +1,6 @@
 "use strict";
 
+var db = require('../../src/database');
 var controllers = require('./lib/controllers'),
 
 	plugin = {};
