@@ -54,7 +54,10 @@ plugin.createAnonPost = function(params, callback) {
 		cid = params.post.cid;
 	else {
 		let topicID = "topic:"+params.post.tid;
-		cid = db.objects.find({_key:topicID}).cid;
+		db.getObject(topicID, function(err, topic) {
+			cid = topic.cid;
+		});
+		
 	}
 
 	console.log("post belongs to category ");
