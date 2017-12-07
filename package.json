@@ -1,0 +1,29 @@
+{
+  "name": "nodebb-plugin-anon-category",
+  "version": "0.1.0",
+  "description": "A plugin that anonymizes poster author in a specific category",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmpasilva/nodebb-plugin-anon-category"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "anonymize",
+    "anon",
+    "category"
+  ],
+  "author": {
+    "name": "David Silva",
+    "email": "david@davidsilva.pt"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmpasilva/nodebb-plugin-anon-category/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  }
+}
