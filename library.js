@@ -48,7 +48,7 @@ plugin.createAnonPost = function(params, callback) {
 		if(cid == 36) {
 			params.post.uid = 0;
 			params.data.uid = 0;
-			//params.data.req.uid = 0;
+			params.data.req.uid = 0;
 		}
 
 		console.log(params);
@@ -69,7 +69,7 @@ plugin.createAnonPost = function(params, callback) {
 			if(category == 36) {
 				params.post.uid = 0;
 				params.data.uid = 0;
-				//params.data.req.uid = 0;
+				params.data.req.uid = 0;
 				
 			}
 			
