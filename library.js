@@ -47,33 +47,37 @@ plugin.createAnonPost = function(params, callback) {
 
 	let cid = undefined;
 	
-	if(params.post.hasOwnProperty("cid"))
+	if(params.post.hasOwnProperty("cid")) {
 		cid = params.post.cid;
-	else {
-		let topicID = "topic:"+params.post.tid;
-		console.log("Searching for... "+topicID);
 		
-		cid = topics.getTopicField(params.post.tid, 'cid', function(err, category) {
+		console.log("post belongs to category ");
+		console.log(cid);
+
+		//callback();
+		callback(null, params);
+		console.log("finished");
+		console.log("-------------------");
+	}
+	else {
+		
+		topics.getTopicField(params.post.tid, 'cid', function(err, category) {
 			if (err) {
 				console.log("There was an error in anonymizer");
 				return -1;
 			}
 	
-			console.log("I'm here");
+			console.log("post belongs to category ");
 			console.log(category);
-			return category;
+			
+			callback(null, params);
+			console.log("finished");
+			console.log("-------------------");
 		});
 		
 	}
 
-	console.log("post belongs to category ");
-	console.log(cid);
 	
-	
-	//callback();
-	callback(null, params);
-	console.log("finished");
-	console.log("-------------------");
 };
+
 
 module.exports = plugin;
