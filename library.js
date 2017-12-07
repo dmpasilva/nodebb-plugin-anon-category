@@ -31,10 +31,10 @@ plugin.addAdminNavigation = function(header, callback) {
 plugin.createAnonPost = function(params, callback) {
 	console.log("-------------------");
 	console.log("called createAnonPost");
-	console.log(params.topicData);
+	console.log(params);
 	console.log("-------------------");
 	
-	callback();
+	callback(params);
 };
 
 module.exports = plugin;
