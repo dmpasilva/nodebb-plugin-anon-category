@@ -8,7 +8,7 @@ This plugin is still under development.
 
 **Installation is not recommended. Please be extremely careful and read every step carefuly.**
 
-Anotate the ID of the category you want to be the anon category.  
+Take note of the ID of the category you want to become the Anon Category .  
 
 Head to your nodeBB root directory (eg.: /usr/src/app) and install the plugin using:
 
