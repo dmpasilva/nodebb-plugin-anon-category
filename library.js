@@ -36,9 +36,9 @@ plugin.anonTopic = function(params, callback) {
 	console.log("Called anonTopic");
 	console.log(params);
 
-	if(params.topic.cid == 36) {
-		params.topic.uid = 0;
-		params.data.uid = 0;
+	if(params.topic.cid == nconf.get('anoncat:category')) {
+		params.topic.uid = nconf.get('anoncat:posterId');
+		params.data.uid = nconf.get('anoncat:posterId');
 		
 		// we need this to stay as is due to forum modaration concerns
 		//params.data.req.uid = 0;
@@ -60,9 +60,9 @@ plugin.createAnonPost = function(params, callback) {
 	if(params.post.hasOwnProperty("cid")) {
 		let cid = params.post.cid;
 		
-		if(cid == 36) {
-			params.post.uid = 0;
-			params.data.uid = 0;
+		if(cid ==  nconf.get('anoncat:category')) {
+			params.post.uid = nconf.get('anoncat:posterId');
+			params.data.uid = nconf.get('anoncat:posterId');
 			
 			// we need this to stay as is due to forum modaration concerns
 			//params.data.req.uid = 0;
@@ -84,9 +84,9 @@ plugin.createAnonPost = function(params, callback) {
 			console.log("post belongs to category ");
 			console.log(category);
 
-			if(category == 36) {
-				params.post.uid = 0;
-				params.data.uid = 0;
+			if(category == nconf.get('anoncat:category')) {
+				params.post.uid = nconf.get('anoncat:posterId');
+				params.data.uid = nconf.get('anoncat:posterId');
 				
 				// we need this to stay as is due to forum modaration concerns
 				//params.data.req.uid = 0;
