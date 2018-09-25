@@ -4,7 +4,10 @@ var path = require('path');
 var nconf = require('nconf');
 
 var topics = require(path.join(nconf.get('base_dir'), 'src/topics'));
-var controllers = require('./lib/controllers'),
+var controllers = require('./lib/controllers');
+
+var AnonCategory = nconf.get('anoncat:category');
+var AnonPosterID = nconf.get('anoncat:posterId'),
 
 plugin = {};
 
@@ -36,9 +39,9 @@ plugin.anonTopic = function(params, callback) {
 	console.log("Called anonTopic");
 	console.log(params);
 
-	if(params.topic.cid == nconf.get('anoncat:category')) {
-		params.topic.uid = nconf.get('anoncat:posterId');
-		params.data.uid = nconf.get('anoncat:posterId');
+	if(params.topic.cid == AnonCategory) {
+		params.topic.uid = AnonPosterID;
+		params.data.uid = AnonPosterID;
 		
 		// we need this to stay as is due to forum modaration concerns
 		//params.data.req.uid = 0;
@@ -60,9 +63,9 @@ plugin.createAnonPost = function(params, callback) {
 	if(params.post.hasOwnProperty("cid")) {
 		let cid = params.post.cid;
 		
-		if(cid ==  nconf.get('anoncat:category')) {
-			params.post.uid = nconf.get('anoncat:posterId');
-			params.data.uid = nconf.get('anoncat:posterId');
+		if(cid ==  AnonCategory) {
+			params.post.uid = AnonPosterID;
+			params.data.uid = AnonPosterID;
 			
 			// we need this to stay as is due to forum modaration concerns
 			//params.data.req.uid = 0;
@@ -84,9 +87,9 @@ plugin.createAnonPost = function(params, callback) {
 			console.log("post belongs to category ");
 			console.log(category);
 
-			if(category == nconf.get('anoncat:category')) {
-				params.post.uid = nconf.get('anoncat:posterId');
-				params.data.uid = nconf.get('anoncat:posterId');
+			if(category == AnonCategory) {
+				params.post.uid = AnonPosterID;
+				params.data.uid = AnonPosterID;
 				
 				// we need this to stay as is due to forum modaration concerns
 				//params.data.req.uid = 0;
